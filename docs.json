@@ -1,53 +1,82 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mintlify Starter Kit",
+  "name": "dpdpcomply",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#F36000",
+    "light": "#FB923C",
+    "dark": "#EA580C"
   },
   "favicon": "/favicon.svg",
+  "background": {
+    "decoration": "grid"
+  },
   "navigation": {
-    "pages": [
+    "tabs": [
       {
-        "group": "Getting Started",
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "index",
+              "quickstart",
+              "architecture"
+            ]
+          },
+          {
+            "group": "Core Platform",
+            "pages": [
+              "consent-management",
+              "privacy-vault",
+              "grievance-redressal",
+              "incident-response"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "API Reference",
+        "groups": [
+          {
+            "group": "Endpoints",
+            "pages": [
+              "api-overview"
+            ]
+          },
+          {
+            "group": "Integrations",
+            "pages": [
+              "forms-sdk",
+              "webhooks"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Changelog",
         "pages": [
-          "index",
-          "quickstart"
+          "changelog"
         ]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    }
+    ]
   },
   "logo": {
     "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "dark": "/logo/dark.svg",
+    "href": "/"
   },
   "navbar": {
     "links": [
       {
         "label": "Support",
-        "href": "mailto:support@mintlify.com"
+        "href": "mailto:support@dpdpcomply.com"
       }
     ],
     "primary": {
       "type": "button",
       "label": "Dashboard",
-      "href": "https://app.mintlify.com"
+      "href": "/"
     }
   },
   "contextual": {
@@ -64,9 +93,85 @@
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
-    }
+      "github": "https://github.com/ninecorps"
+    },
+    "links": [
+      {
+        "header": "Explore",
+        "items": [
+          {
+            "label": "Documentation",
+            "href": "/"
+          },
+          {
+            "label": "Quickstart Guide",
+            "href": "/quickstart"
+          },
+          {
+            "label": "Consent Lifecycle",
+            "href": "/consent-management"
+          },
+          {
+            "label": "Privacy Vaults",
+            "href": "/privacy-vault"
+          }
+        ]
+      },
+      {
+        "header": "Resources",
+        "items": [
+          {
+            "label": "API Reference",
+            "href": "/api-overview"
+          },
+          {
+            "label": "Form Studio & SDK",
+            "href": "/forms-sdk"
+          },
+          {
+            "label": "Webhooks & Events",
+            "href": "/webhooks"
+          },
+          {
+            "label": "Changelog",
+            "href": "/changelog"
+          }
+        ]
+      },
+      {
+        "header": "Compliance & Legal",
+        "items": [
+          {
+            "label": "DPDPA Architecture",
+            "href": "/architecture"
+          },
+          {
+            "label": "Grievance Redressal SLA",
+            "href": "/grievance-redressal"
+          },
+          {
+            "label": "CERT-In 6h Reporting",
+            "href": "/incident-response"
+          }
+        ]
+      },
+      {
+        "header": "Company",
+        "items": [
+          {
+            "label": "ninecorps GitHub",
+            "href": "https://github.com/ninecorps"
+          },
+          {
+            "label": "Contact Support",
+            "href": "mailto:support@dpdpcomply.com"
+          },
+          {
+            "label": "Client Dashboard",
+            "href": "/"
+          }
+        ]
+      }
+    ]
   }
 }

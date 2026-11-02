@@ -1,0 +1,62 @@
+---
+title: "Privacy Vaults"
+description: "Zero-trust encrypted vaults, data tokenization, nominee management, and erasure enforcement"
+icon: "shield-halved"
+---
+
+The **Privacy Vault** is a secure, isolated data store built on zero-trust principles. Instead of storing identifiable personal data across distributed application databases, sensitive data is tokenized and stored in dedicated vaults.
+
+## Vault Capabilities
+
+<Columns cols={2}>
+  <Card title="Tenant & Campus Isolation" icon="layer-group">
+    Each organization and branch/campus operates in an encrypted, logically isolated vault partition with dedicated key management.
+  </Card>
+  <Card title="Field-Level Tokenization" icon="key">
+    Personal identifiers (Aadhaar last-4, phone numbers, addresses, parent details) are replaced by synthetic surrogate tokens throughout client applications.
+  </Card>
+  <Card title="Nominee Management" icon="user-group">
+    Enables Data Principals to register nominees who can exercise statutory rights in the event of death or incapacity (Section 14).
+  </Card>
+  <Card title="Automated Erasure Engine" icon="trash-can">
+    When consent is withdrawn or the retention purpose expires (Section 8(7)), the vault performs cryptographic erasure or token rotation.
+  </Card>
+</Columns>
+
+---
+
+## Data Principal Records in the Vault
+
+A single Data Principal record maintains the complete lifecycle history:
+
+```json
+{
+  "vault_id": "vlt_principal_991823",
+  "principal_token": "tok_prn_4a8c9b2d",
+  "organization_id": "org_ninecorps_school_01",
+  "branch_id": "brn_campus_north",
+  "created_at": "2026-10-15T09:30:00Z",
+  "active_consents": [
+    "csa_8f7b3c21a94e4d6f"
+  ],
+  "nominee": {
+    "nominee_token": "tok_nom_771829",
+    "relationship": "MOTHER",
+    "verified_phone_hash": "b2c3d4e5..."
+  },
+  "retention_policy": {
+    "basis": "STUDENT_ENROLLMENT",
+    "retain_until": "2028-05-31T23:59:59Z",
+    "auto_purge": true
+  }
+}
+```
+
+## Nominee Claim Workflow
+
+Section 14 of the DPDP Act provides Data Principals the right to nominate any individual to exercise their rights in case of death or incapacity.
+
+1. **Nomination**: Captured securely during onboarding with dual-factor verification.
+2. **Claim Intake**: The nominee initiates a claim via the public portal using their mobile number and certificate evidence.
+3. **Verification**: Organization DPO reviews documentation and approves transfer of rights.
+4. **Vault Delegation**: Vault access tokens are regenerated and delegated to the verified nominee.

@@ -1,0 +1,57 @@
+---
+title: "Webhooks & Events"
+description: "Real-time notifications for consent changes, vault erasures, and email events"
+icon: "bolt"
+---
+
+Webhooks enable external systems (such as school ERPs, CRMs, or student information systems) to subscribe to real-time events triggered inside `dpdpcomply`.
+
+## Supported Event Types
+
+| Event Name | Trigger Condition |
+| :--- | :--- |
+| `consent.granted` | A Data Principal successfully grants affirmative consent on a form. |
+| `consent.withdrawn` | A Data Principal revokes consent for one or more purpose codes. |
+| `vault.erased` | A Data Principal's tokenized records are permanently purged following retention expiry. |
+| `grievance.created` | A new statutory grievance or Subject Rights Request (SRR) is filed. |
+| `incident.p0_created` | A critical personal data breach is recorded; statutory countdown starts. |
+
+---
+
+## Verifying Webhook Signatures
+
+All outgoing webhook payloads include the `X-DPDP-Signature` header computed as an HMAC SHA-256 hash using your organization's webhook secret.
+
+<CodeGroup>
+```javascript Node.js
+import crypto from "crypto";
+
+export function verifyWebhook(rawBody, signatureHeader, secret) {
+  const hmac = crypto.createHmac("sha256", secret);
+  const digest = "sha256=" + hmac.update(rawBody).digest("hex");
+  
+  return crypto.timingSafeEqual(
+    Buffer.from(signatureHeader),
+    Buffer.from(digest)
+  );
+}
+```
+
+```python Python
+import hmac
+import hashlib
+
+def verify_webhook(raw_body: bytes, signature_header: str, secret: str) -> bool:
+    expected = "sha256=" + hmac.new(
+        secret.encode("utf-8"),
+        raw_body,
+        hashlib.sha256
+    ).hexdigest()
+    
+    return hmac.compare_digest(signature_header, expected)
+```
+</CodeGroup>
+
+<Note>
+  Failed webhook deliveries are automatically retried up to 5 times with exponential backoff before generating an alert on your admin dashboard.
+</Note>

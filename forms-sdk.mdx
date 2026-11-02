@@ -1,0 +1,72 @@
+---
+title: "Forms & SDK Integration"
+description: "Embedding compliant forms, notice modals, signature pads, and branch routing"
+icon: "cube"
+---
+
+The `dpdpcomply` form engine allows institutions to build and publish admission forms, event registrations, and staff onboarding surveys that are **DPDP-compliant by design**.
+
+## Features
+
+<Columns cols={2}>
+  <Card title="Unbundled Notice Modal" icon="file-shield">
+    Forces affirmative user acknowledgement of privacy notices prior to submission. Bundled checkboxes are blocked.
+  </Card>
+  <Card title="Multi-Campus Scoping" icon="school">
+    Route submissions directly to specific campus vaults with isolated administrator access.
+  </Card>
+  <Card title="Guardian & Age Gate" icon="children">
+    Automatically triggers guardian consent steps when an applicant's age is under 18 years.
+  </Card>
+  <Card title="Digital Signatures" icon="signature">
+    Embedded touch/mouse signature drawing pads and certificate upload zones.
+  </Card>
+</Columns>
+
+---
+
+## Embedding a Compliant Form
+
+Embed forms into your existing Next.js, React, or static website:
+
+<CodeGroup>
+```html HTML Embed
+<!-- Insert container element -->
+<div id="dpdp-form-container"></div>
+
+<!-- Load form runtime script -->
+<script 
+  src="https://cdn.dpdpcomply.com/embed/v1.js"
+  data-form-id="frm_admission_2027"
+  data-campus-slug="north-campus"
+  data-theme="auto"
+  async>
+</script>
+```
+
+```tsx React / Next.js
+import { useEffect } from "react";
+
+export function AdmissionForm() {
+  useEffect(() => {
+    // Initialize DPDP form widget
+    const script = document.createElement("script");
+    script.src = "https://cdn.dpdpcomply.com/embed/v1.js";
+    script.dataset.formId = "frm_admission_2027";
+    script.dataset.campusSlug = "north-campus";
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
+  return <div id="dpdp-form-container" className="w-full min-h-[600px]" />;
+}
+```
+</CodeGroup>
+
+<Tip>
+  All submissions automatically generate verifiable **Consent Artifacts** without writing custom backend tokenization logic.
+</Tip>

@@ -1,0 +1,86 @@
+---
+title: "API Overview"
+description: "HTTP surface architecture, 288+ endpoints, tenant and public planes, and authentication"
+icon: "code"
+---
+
+The `dpdpcomply` backend provides a unified, strictly typed FastAPI HTTP surface covering **288 paths and 345 operations**. The API is separated into distinct planes based on security context and caller identity.
+
+## Planes of Operation
+
+```mermaid
+flowchart TD
+    Client[Client App / Admin Dashboard] -->|1. Session Cookies| TenantPlane["Tenant Plane (/v1/...)"]
+    PublicUser[Data Principal / Nominee] -->|2. OTP / Signed Link| PublicPlane["Public Portal Plane (/public/...)"]
+    AuthUI[Authentication UI] -->|3. Auth Cookies| AccountsPlane["Accounts Plane (/api/...)"]
+    External[External Webhooks SES/SNS] -->|4. Signature HMAC| WebhooksPlane["Webhooks Plane (/webhooks/...)"]
+```
+
+### 1. Tenant Plane (`/v1/...`)
+- **Scope**: 188 paths / 237 operations.
+- **Audience**: Authenticated Data Fiduciary staff, DPOs, and campus administrators.
+- **Authentication**: Session cookie (`ncp_session`) or Bearer API token.
+- **Key Modules**:
+  - `/v1/vault`: Data principal records, tokenized entries, nominee claims.
+  - `/v1/forms`: Form CRUD, design assets, and publication settings.
+  - `/v1/incidents`: 6-hour CERT-In desk, timeline notes, evidence packs.
+  - `/v1/data`: Submissions, grievance tickets, Board-ready audit exports.
+  - `/v1/organizations`: Campus branches, RBAC team roles, seat caps.
+
+### 2. Public Portal Plane (`/public/...`)
+- **Scope**: 31 paths / 35 operations.
+- **Audience**: Unauthenticated Data Principals, parents/guardians, and nominees.
+- **Security**: Rate-limited, Cloudflare Turnstile token validation, SMS/Email OTP verification.
+- **Key Endpoints**:
+  - `/public/forms/{form_id}`: Fetch active form schema and unbundled multilingual notice.
+  - `/public/forms/{form_id}/submit`: Process submission, generate Consent Artifact, deposit to vault.
+  - `/public/vault/nominee/verify`: Nominee OTP authentication.
+  - `/public/grievances/intake`: Public grievance and SRR intake portal.
+
+### 3. Accounts & Auth Plane (`/api/...` & `/auth/...`)
+- **Scope**: 57 paths.
+- **Audience**: User sign-in, MFA verification, workspace switching, account profile.
+
+---
+
+## Authentication Example
+
+Authenticate requests against the Tenant Plane using your organization API key or active session:
+
+<CodeGroup>
+```bash cURL
+curl -X GET "https://api.dpdpcomply.com/v1/vault/principals" \
+  -H "Authorization: Bearer dpc_live_your_api_key_here" \
+  -H "X-Organization-ID: org_ninecorps_school_01" \
+  -H "Accept: application/json"
+```
+
+```javascript Node.js
+const response = await fetch("https://api.dpdpcomply.com/v1/vault/principals", {
+  headers: {
+    "Authorization": "Bearer dpc_live_your_api_key_here",
+    "X-Organization-ID": "org_ninecorps_school_01",
+    "Accept": "application/json"
+  }
+});
+
+const data = await response.json();
+console.log(data);
+```
+
+```python Python
+import httpx
+
+client = httpx.Client(
+    base_url="https://api.dpdpcomply.com",
+    headers={
+        "Authorization": "Bearer dpc_live_your_api_key_here",
+        "X-Organization-ID": "org_ninecorps_school_01",
+    }
+)
+
+response = client.get("/v1/vault/principals")
+principals = response.json()
+print(principals)
+```
+</CodeGroup>

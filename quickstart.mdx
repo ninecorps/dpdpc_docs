@@ -1,47 +1,59 @@
 ---
 title: "Quickstart"
-description: "Begin with a guide on the fastest path to a successful outcome"
+description: "Set up your organization, configure privacy notices, and capture compliant consents in 5 minutes"
+icon: "rocket"
 ---
 
-Describe how someone begins using your product. What is the first thing they need to do? Are there any prerequisites?
-
-A quickstart should take someone from zero to using your product. They'll get a quick win and a sense of what they can accomplish.
+This guide walks you through deploying DPDP-compliant consent capture and privacy vault storage for your organization.
 
 ## Prerequisites
 
-Before you begin, you must have:
+Before getting started, make sure you have:
+- An active Data Fiduciary account on `dpdpcomply`.
+- Designated your organization's **Data Protection Officer (DPO)** or privacy contact details.
+- Identified the campus or operational branch where data will be collected.
 
-- Requirement one (for example, Node.js 18+, a free account, an API key)
-- Requirement two (for example, a compatible device, a compatible browser, a compatible operating system)
+---
 
-## Get started
+## 4-Step Quickstart
 
 <Steps>
-  <Step title="Install">
-    Describe how to install your product or sign up.
-
-    ```bash
-    npm install your-package
-    ```
+  <Step title="Configure Organization & Campus">
+    Log in to your dashboard and navigate to **Settings** > **Organization Profile**. Set your institution's statutory legal name, official address, and DPO email address.
+    
+    If managing multiple schools or branches, add them under **Branches** to enable campus-level vault isolation.
   </Step>
-  <Step title="Configure">
-    Describe any setup or configuration needed before first use.
 
-    ```bash
-    your-cli init
-    ```
+  <Step title="Create an Unbundled Privacy Notice">
+    Go to **Terms & Policy** > **New Notice**.
+    1. Select the processing purpose (e.g., `STUDENT_ADMISSIONS`, `PARENT_COMMUNICATION`).
+    2. Specify the data fields collected (e.g., Full Name, DOB, Parent Mobile, Aadhaar Last-4).
+    3. Choose supported languages (e.g., English, Hindi, Telugu).
+    4. Click **Publish Notice** to generate a versioned notice hash.
   </Step>
-  <Step title="Run it">
-    Show the first thing a user does to see it working.
 
-    ```bash
-    your-cli start
-    ```
+  <Step title="Publish a Form with Consent Modal">
+    Open **Forms** > **New Form**. Add your input fields and toggle **Attach Privacy Notice**.
+    
+    Select the notice created in Step 2. The form runtime will enforce unbundled consent and generate signed **Consent Artifacts** upon submission.
+  </Step>
+
+  <Step title="Inspect Verified Vault Records">
+    Submit a test form response. Head to **Privacy Vault** in your dashboard to verify:
+    - Personal identifiers are encrypted and tokenized.
+    - A cryptographic **Consent Artifact** is generated with SHA-256 signature proof.
   </Step>
 </Steps>
 
-<Tip>
-  Give people a way to get help. This could be a link to a support page, a chat with a customer support agent, or a forum for your product.
+---
 
-  Example: Need help? Reach out to us at [support@yourcompany.com](mailto:support@yourcompany.com).
-</Tip>
+## Next Steps
+
+<Columns cols={2}>
+  <Card title="Consent Lifecycle" icon="handshake" href="/consent-management">
+    Learn how to manage multilingual notices, version changes, and withdrawal workflows.
+  </Card>
+  <Card title="API Reference" icon="code" href="/api-overview">
+    Explore the 288+ REST API endpoints to integrate direct submissions and ERP sync.
+  </Card>
+</Columns>
