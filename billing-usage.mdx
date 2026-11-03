@@ -1,0 +1,46 @@
+---
+title: "Billing & usage"
+description: "Plans, included quotas, GST tax invoices, SMS/OTP credits, vouchers, and live usage telemetry."
+icon: "file-invoice"
+---
+
+**Billing** (`/dpdpc/<org-slug>/billing`) manages your subscription, quotas, statutory tax invoices, and prepaid credits. **Usage** (`/dpdpc/<org-slug>/usage`) shows the live telemetry behind the quotas.
+
+## Subscription plan
+
+The plan card shows your active tier with a **Change subscription plan** button. Plan catalogs — tier names, prices, and included features — come from the live plan catalog and are shown on the plan cards during selection.
+
+<Steps>
+  <Step title="Pick a billing interval">
+    Monthly or Yearly (yearly saves 15%).
+  </Step>
+  <Step title="Choose a tier">
+    Lower tiers upgrade instantly; higher tiers continue to checkout.
+  </Step>
+  <Step title="Complete the GST checkout">
+    Enter your institution's legal name, optional GSTIN (it auto-selects the State of Supply), campus address, and payment method. A live tax preview shows IGST 18% (or CGST 9% + SGST 9%) before you confirm and generate the tax invoice.
+  </Step>
+</Steps>
+
+## Included quotas and limits
+
+The **Included Quotas** frame lists campuses, active data subjects, and admin seats against their caps. Quotas are enforced, not billed: when an action would exceed a cap — creating a form, adding a branch, inviting a member, sending email — a **limit reached** dialog explains which limit was hit and links to **View plans**. Usage beyond included quotas is never billed without explicit authorization.
+
+## Invoices, credits, and vouchers
+
+- **Past Invoices** — statutory tax invoices per billing cycle (Rule 46, CGST Rules). Open one for full detail or download the PDF.
+- **Credit Balance** — prepaid SMS/OTP credits (1 credit = ₹1) applied to renewals and statutory dispatches. **Top Up Balance** offers preset packs (500 / 1,000 / 2,500 / 5,000 credits) or a custom amount; **Redeem Voucher** applies a grant code shown in the dialog.
+- **Billing contact** — where official notices, receipts, and tax invoices are routed.
+
+## Usage telemetry
+
+The **Usage** page breaks down the billing cycle: campuses, students, seats, forms published, consents tracked, open rights requests and grievances, vendor processors, incidents, domains, mailboxes, emails sent, and network egress. The **Plan Quotas** section lists enforced limits, and **Daily Submissions** charts intake volume per day. Use the cycle selector to compare with the previous period.
+
+<Columns cols={2}>
+  <Card title="Onboarding & plans" icon="rocket" href="/onboarding">
+    How plans are described at setup.
+  </Card>
+  <Card title="Team & roles" icon="users" href="/team-roles">
+    Seat limits and member management.
+  </Card>
+</Columns>

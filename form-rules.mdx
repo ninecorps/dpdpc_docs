@@ -1,0 +1,47 @@
+---
+title: "Form rules"
+description: "Show or hide fields and choices conditionally, and email respondents a PDF of their submission."
+icon: "diagram-project"
+---
+
+The **Rules** tab of a form (in the builder) has three rule builders. Rules apply to the live form once the form is saved and published.
+
+## Field rules
+
+Show or hide a field based on respondent input.
+
+1. Open **Field Rules** and click **Configure Now** (or **Add Rule** when rules exist).
+2. Build the condition: **When** [field] [operator] [value]. Operators include equals, does not equal, contains, is empty, is not empty, is less than, and is greater than or equal to. Combine conditions with **AND** / **OR**, and use **Add Condition** for more.
+3. Set the **Action** to **Show** or **Hide** and pick the **Target Field**.
+4. Use the card's switch to disable a rule without deleting it.
+
+<Note>
+Fields hidden by rules are exempt from required-field validation — respondents are never blocked by a field they cannot see.
+</Note>
+
+## Choice-based field rules
+
+Same condition builder, but for the options *inside* a choice field (dropdowns, radios, checkboxes): choose a choice-type field as the target, then tick the specific **Target Choices** to show or hide.
+
+## Form rules (email on submission)
+
+Send the respondent (or another inbox) a complete PDF of their submission:
+
+1. Open **Form Rules** and click **Configure Rule**. A new **Email Rule** is created, Active by default.
+2. Choose the recipient:
+   - **Form Email Field** — an email field in your form (the respondent gets the email).
+   - **Custom Email** — one or more comma-separated addresses.
+   - **Both** — respondent and custom recipients.
+3. Edit the **Email Subject** (leave blank for the default `Submission Received: {form name}`) and the **Email Message**.
+4. Keep **Attach complete form submission as PDF** ticked to generate an official PDF with the form title, metadata, and all answers.
+
+Duplicate, disable, or remove a rule from the icons on its card.
+
+<Columns cols={2}>
+  <Card title="Form builder" icon="layout" href="/form-builder">
+    Build the fields these rules act on.
+  </Card>
+  <Card title="Form submissions & analytics" icon="chart-simple" href="/forms-submissions">
+    Review the responses your rules collect.
+  </Card>
+</Columns>

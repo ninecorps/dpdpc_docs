@@ -10,6 +10,7 @@
 ## About this project
 
 - This is the official developer and product documentation site for **dpdpcomply** built on [Mintlify](https://mintlify.com)
+- Product help guides (one how-to page per dashboard feature, plus an FAQ) sit under the "Product Guides", "Forms", "Consent & Policies", "Data & Requests", "Security & Vault", "Settings & Billing", and "Support" groups, and follow the same style and terminology
 - Pages are MDX files with YAML frontmatter
 - Configuration lives in `docs.json`
 - Brand assets: `favicon.svg`, `favicon.ico`, `logo/light.svg`, `logo/dark.svg`, and `logo/logo.png`

@@ -1,0 +1,58 @@
+---
+title: "Group Overview"
+description: "Consolidated multi-branch compliance roll-up with per-campus audit packs for head-office users."
+icon: "layer-group"
+---
+
+Group Overview is a Trust-Board roll-up at `/dpdpc/<org-slug>/group`. It consolidates compliance health across all campuses — submissions, minor/adult split, forms, and seat usage — while branch data stays isolated per campus (Sec 8(5)).
+
+<Note>
+Group Overview is available to organization-wide (head-office) users. If your account is scoped to a branch, the page shows a **Branch-scoped view** notice instead of data. To get the consolidated view, a head-office administrator must switch you to All Branches.
+</Note>
+
+## Read the dashboard
+
+Three KPI cards summarize the group:
+
+- **Consolidated** — total submissions, split into **Adult** and **Minor** counts.
+- **Campuses** — number of campuses, with seat usage against the org-wide seat cap.
+- **Compliance** — how many campuses are active versus archived (a campus lifecycle count, not a score).
+
+Below the KPIs, the **Per-Campus Compliance Matrix** lists one row per branch with columns:
+
+| Column | What it shows |
+| ------ | ------------- |
+| Branch | Branch name (head office marked) |
+| Submissions | Total responses for that campus |
+| Minor / Adult | Split of minor and adult principals |
+| Forms | Number of forms owned by the campus |
+| Seats | Seat usage for that branch |
+| Audit Pack | Download button for that campus |
+
+## Download audit packs
+
+<Steps>
+  <Step title="Open Group Overview">
+    Go to `/dpdpc/<org-slug>/group` from the sidebar (**Group Overview**).
+  </Step>
+  <Step title="Pick the pack you need">
+    - **Consolidated Pack** (top right) — one org-wide PDF covering all campuses.
+    - **Pack** on any matrix row — a per-branch PDF containing only that campus's data.
+  </Step>
+  <Step title="Confirm the download">
+    A toast confirms **Audit pack downloaded**. If a branch's stats failed to load, its row shows the error instead of a pack.
+  </Step>
+</Steps>
+
+<Tip>
+Use **Refresh** to re-fetch the latest branch stats before a board meeting. Per-branch packs are generated only for head-office users.
+</Tip>
+
+<Columns cols={2}>
+  <Card title="Data submissions" icon="table" href="/data-submissions">
+    Work with the underlying submissions and org-wide audit packs.
+  </Card>
+  <Card title="Organization branches" icon="sitemap" href="/organization-settings">
+    Create and manage the branches that appear in this matrix.
+  </Card>
+</Columns>

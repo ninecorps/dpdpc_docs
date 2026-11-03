@@ -1,0 +1,55 @@
+---
+title: "Vendors (data processors)"
+description: "Register vendors, record their DPDP role, attach contracts, and link them to the forms whose data they receive."
+icon: "truck"
+---
+
+The **Vendors** page (`/dpdpc/<org-slug>/vendors`) is your register of vendor companies — transport providers, EdTech tools, payment processors, and similar — with their statutory data processor agreements (DPAs) and compliance records.
+
+The DPDP role you record matters across the product:
+
+- **Processor (acts on your behalf)** — you must notify them to stop processing or erase data when a principal withdraws or requests erasure.
+- **Independent fiduciary (own consent)** — they collect data under their own consent; principals contact them directly.
+
+Registered vendors can be linked to individual forms in the form's Integrations tab — see [Form integrations](/form-integrations).
+
+## Add a vendor
+
+<Steps>
+  <Step title="Open the form">
+    Click **Add Vendor**.
+  </Step>
+  <Step title="Fill the company profile">
+    Company name (required), category, website, city and state, GSTIN, lifecycle, annual spend, and tags; plus a **Primary Contact** (name, email, phone).
+  </Step>
+  <Step title="Set the DPDP role">
+    Choose **Processor** or **Independent fiduciary**, and set the notice email if different from the contact email. Describe what the vendor does for you.
+  </Step>
+  <Step title="Attach files (optional)">
+    Drag in MSA, certificates, or KYC documents (PDF, Word, Excel, or images, up to 3.5 MB each), then **Add vendor**.
+  </Step>
+</Steps>
+
+## Manage a vendor
+
+Click a row to open the detail drawer:
+
+- **Overview** — contract terms (end date, reference, annual spend), which linked forms receive data, and profile fields.
+- **Contacts** — add and remove account contacts.
+- **Activity** — a timeline of notes and call logs.
+- **Docs** — attach, download, rename, or replace documents.
+
+Use **Edit profile** to update details, or **Upload Contract Copy** to record the signed agreement with its end date, reference, and value.
+
+<Warning>
+**Archive** from a vendor's row menu takes effect immediately, without a confirmation dialog — the vendor disappears from the list.
+</Warning>
+
+<Columns cols={2}>
+  <Card title="Form integrations" icon="plug" href="/form-integrations">
+    Link vendors to forms and send processor notices.
+  </Card>
+  <Card title="Fiduciary inbox" icon="inbox" href="/fiduciary-inbox">
+    Send vendor notices when principals withdraw or request erasure.
+  </Card>
+</Columns>

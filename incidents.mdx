@@ -1,0 +1,67 @@
+---
+title: "Incidents & breach desk"
+description: "Declare security incidents and personal data breaches, run the 72-hour statutory clock, and dispatch Rule 7(1) notices."
+icon: "triangle-exclamation"
+---
+
+The **Incidents** desk (`/dpdpc/<org-slug>/incidents`) is your incident and breach response workspace. It handles two tracks: **Personal Data Breach** (DPDP statutory track with the 72-hour Data Protection Board reporting window under Section 8(6)) and **Others** (operational and physical events, tracked internally).
+
+## The desk
+
+- **KPIs** — Active 6h Timers, Active 72h Breaches, Affected People, Filings Completed.
+- **Filter tabs** — All, Active Timers, DPDP Breaches, Critical P1, Statutory Filed, Drills.
+- **Views** — a **Table view** or a **Kanban Board view** with lanes from Triage & Containment to Resolved & Closed.
+- **Search** — by reference, summary, symptoms, or Board acknowledgement ID.
+
+## Declare a personal data breach
+
+<Steps>
+  <Step title="Open the wizard">
+    Click **Declare Incident** and choose **Personal Data Breach** (badge: 72-Hour Board Intimation).
+  </Step>
+  <Step title="Describe the breach">
+    Fill the title, **Discovered At** time, location, data format (digital, digitised, or physical paper only — paper records are exempt under Section 3(a)), vendor if any, and the description with containment steps taken.
+  </Step>
+  <Step title="Assess the scope">
+    Select the **Compromised Data Categories** (Aadhaar / Govt ID, Fee / Bank Details, Health / Medical Records, and so on — or add your own), enter the **Estimated People Affected**, and review the auto-calculated **Harm Risk** badge.
+  </Step>
+  <Step title="Attach evidence and assign an owner">
+    Add up to 8 evidence files (10 MB each, 25 MB total). The assigned contact defaults to your organization's grievance officer and can be edited per incident.
+  </Step>
+  <Step title="Declare">
+    Click **Declare Incident** — the 72-hour Board intimation window activates on declaration.
+  </Step>
+</Steps>
+
+## Dispatch statutory notices
+
+Declaring a breach does not email anyone by itself — notices wait for you:
+
+1. The **Statutory notice dispatch** panel lists recipients staged in pending status. Review the recipient count and server pacing.
+2. Click **Send all statutory notices**. Every affected principal receives a Rule 7(1) breach notice with the school's breach contact and grievance link. Watch the Delivered / Pending / Failed / Unreached counters until they settle.
+3. From the incident dossier, **Send update** lets you notify everyone already notified about what has changed (for example, a revised record count).
+
+<Tip>
+Use **Mock Audit Drill** to rehearse the full flow — countdown, notices, and all — without sending real email. Drill incidents are clearly labelled and kept out of live filters.
+</Tip>
+
+## Declare other incidents
+
+For operational and physical events (stolen hardware, facility intrusion, vendor outage, paper exposure), choose **Others (Operational / Physical)**, pick an incident category and severity, and list affected assets. Tick **This incident involved or exposed personal data** only if personal data was exposed — that activates the same Board countdown and notice flow.
+
+## Work the dossier
+
+Open any incident (row, card, or **Dossier**) to see severity, affected people, risk profile, leaked data categories, and the statutory obligations ladder: the DPBI first intimation (Rule 7(2)(a)), the detailed 72-hour report (Rule 7(2)(b)) with its deadline, and the parent/principal notices (Rule 7(1)). From here you can **Download report** (a consolidated PDF) and manage evidence files.
+
+<Warning>
+Deleting an incident permanently removes the incident, its statutory notices and filings, evidence files, and audit ledger. This cannot be undone.
+</Warning>
+
+<Columns cols={2}>
+  <Card title="Fiduciary inbox" icon="inbox" href="/fiduciary-inbox">
+    Handle principal requests that often follow a breach.
+  </Card>
+  <Card title="Organization settings" icon="building" href="/organization-settings">
+    Configure the grievance officer used as the incident contact.
+  </Card>
+</Columns>

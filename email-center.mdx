@@ -1,0 +1,47 @@
+---
+title: "Email center & design studio"
+description: "Verified sending domains, purpose-based routing, delivery monitoring, suppression, and email branding."
+icon: "envelope"
+---
+
+**Email Settings** (`/dpdpc/<org-slug>/organization/email`) controls every outbound email your workspace sends — consent receipts, OTP codes, statutory notices, invites, and grievance updates.
+
+## Sending domains
+
+Connect your organization's email domain so mail comes from your own address instead of the platform relay:
+
+1. Click **Add sending domain**, enter the domain (apex or a dedicated mail subdomain) and a sender prefix (default `noreply`).
+2. Add the **Email Deliverability DNS Records** shown — DKIM CNAME records plus a DMARC alignment record — at your registrar. If your provider auto-appends the domain (Namecheap, GoDaddy), enter only the host prefix; the page flags this as a Double-Domain configuration.
+3. Click **Verify DNS Now** until the badge turns **Verified**, then **Send Test Email** to an inbox you control.
+
+Per-domain email setup also exists on the [Domains page](/domains-scanner), alongside branded portals.
+
+## Email routing
+
+The **Notification Channel Routing Matrix** maps statutory communication purposes to verified sender mailboxes. For each purpose: toggle it on, set the outbound sender (prefix + verified domain), display name, optional reply-to, and a template style. **Preview** opens the design studio for that template; **Test send** emails a sample. **Save Matrix** persists everything — unassigned purposes fall back to the platform default sender.
+
+## Email center
+
+Three sub-tabs for operations:
+
+- **Overview** — 30-day delivered/bounce/complaint stats, the monthly email quota (warning from 80% usage), and the pipeline note. Statutory mail — OTPs, notices, invites — never counts against the quota.
+- **Activity** — a searchable ledger of every send with its delivery trail. Retry failed sends; cancel pending ones. Recipient addresses are masked 90 days after each send, and rows purge after 12 months; open and click trackers are never used.
+- **Suppression** — hard-bounced or complaint-flagged addresses land here automatically to protect sender reputation. Removing an entry lets future sends retry that address — only remove it if the address is valid again.
+
+## Email design studio
+
+**Template customization** opens the full-page studio at `/dpdpc/<org-slug>/emails/design`:
+
+- **Brand identity** — set your logo (PNG/JPEG/WebP under 2 MB, re-encoded and hosted for every mailbox) and six palette colors (brand, primary, accent, background, card, text). Unsaved edits render live in the preview.
+- **Template previews** — switch the **Editing** dropdown to any notification scenario to see it with your branding. Statutory templates are locked: you can inspect their exact wording, but only branding is customizable.
+
+Click **Save branding** to apply your identity to every outbound email.
+
+<Columns cols={2}>
+  <Card title="Organization settings" icon="building" href="/organization-settings">
+    Keep officer and contact details current — emails pull them from your profile.
+  </Card>
+  <Card title="Domains, portals & scanner" icon="globe" href="/domains-scanner">
+    Per-domain DNS verification and branded portals.
+  </Card>
+</Columns>

@@ -1,0 +1,63 @@
+---
+title: "Workspace home"
+description: "Your compliance dashboard: posture, KPIs, forms, SLA queue, and the Getting Started checklist."
+icon: "house"
+---
+
+Workspace home is your landing page after sign-in, at `/dpdpc/<org-slug>/home`. It summarizes your DPDP fiduciary posture and gives you one-click access to the day's compliance work.
+
+## Choose a scope
+
+The dashboard works in two scopes, controlled by the organization switcher in the header:
+
+- **All Branches** — a consolidated view across every campus (org-wide users only).
+- **A single branch** — data for one campus. If your account is scoped to a single branch, you are pinned to it automatically.
+
+To switch scope, click the organization name in the header, then pick **All Branches Overview** or a branch row. From the same panel you can copy the **Org ID** or open **Manage Organization**.
+
+## Dashboard tab
+
+- **Welcome banner** — appears while your workspace has no data yet, with a **Create first form** button and a role-based shortcut (organization configuration, branch team management, or branch details).
+- **DPDP Fiduciary Posture bar** — your posture status with quick actions: **Create Form**, **Rights Inbox** (shows a badge for pending statutory requests), and **Vault Explorer** (opens the Privacy Vault portal in a new tab).
+- **KPI cards**:
+  - **Verified Consents** — total verified consents across your forms, with an Adult vs Minor (Sec 9) split.
+  - **Pending SLA Actions** — how many statutory rights requests are resolved versus pending, with a link to the SLA inbox.
+  - **Active Consent Notices** — live consent forms in production, plus how many are still in draft.
+  - **Cryptographic Vault** — vault status with a link to inspect it.
+- **Consent Notices & Forms** — your four most recent forms with Live/Draft status and response counts. Use **View all** to open Forms.
+- **Fiduciary SLA Queue** — pending Section 11 & 12 rights requests and grievances with a **Triage** link per item.
+- **Recent Verified Submissions & Consent Receipts** — the latest submissions with the data principal, form, subject category (Adult or Minor/Child, Sec 9), consent proof, and date.
+
+<Note>
+Some figures — the posture pill and vault status line — are fixed status labels, not live measurements. Treat the KPI numbers and the SLA queue as the source of truth.
+</Note>
+
+## Getting Started tab
+
+A four-step checklist that mirrors a compliant setup sequence:
+
+1. **Organization Profile & Fiduciary Identity** — **Configure details**
+2. **DPDP Terms & Statutory Notices** — **Manage terms**
+3. **Consent Collection Intake Forms** — **Create form**
+4. **Fiduciary Vault & Grievance Redressal** — **Open vault**
+
+Each card links straight to the relevant part of the workspace.
+
+## Recent Updates tab
+
+An activity feed area for form submissions, consent updates, and policy revisions. Until activity streaming is enabled it shows the placeholder **No recent activity**.
+
+<Columns cols={2}>
+  <Card title="Group Overview" icon="layer-group" href="/group-overview">
+    Consolidated multi-branch roll-up for head-office users.
+  </Card>
+  <Card title="Create your first form" icon="file-lines" href="/forms-create">
+    Build a DPDP-compliant consent form from scratch or a template.
+  </Card>
+  <Card title="Fiduciary inbox" icon="inbox" href="/fiduciary-inbox">
+    Handle rights requests and grievances within SLA.
+  </Card>
+  <Card title="Privacy Vault portal" icon="shield-halved" href="/vault-portal">
+    What your data principals see in their self-service vault.
+  </Card>
+</Columns>

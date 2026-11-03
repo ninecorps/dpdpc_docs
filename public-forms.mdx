@@ -1,0 +1,48 @@
+---
+title: "Public form experience"
+description: "What respondents see: campus selection, verification, submission, and the consent receipt."
+icon: "globe"
+---
+
+Published forms are served at `/form/<form-id>` or `/form/<campus-slug>/<form-slug>`. The page always renders in a clean light theme, whatever your dashboard theme is.
+
+## Respondent flow
+
+<Steps>
+  <Step title="Open the link">
+    Multi-branch organizations can show a **Select Campus** screen first, asking which campus the enquiry is for.
+  </Step>
+  <Step title="Fill in the form">
+    Multi-page forms show a navigation bar. When validation is set to run before proceeding, missing required fields block **Next** with a message listing what to complete; **Back** is always allowed.
+  </Step>
+  <Step title="Verify (if required)">
+    Email fields marked for verification ask for a 6-digit code. The code is valid for 5 minutes, with a 60-second resend cooldown and a limit of five resends.
+  </Step>
+  <Step title="Complete the bot check (if enabled)">
+    If your organization enabled Cloudflare Turnstile, respondents complete the challenge before submitting.
+  </Step>
+  <Step title="Submit">
+    **Submit Response** records the entry. The respondent either lands on the Thank You screen or is redirected to a URL configured for the form.
+  </Step>
+</Steps>
+
+## Thank-you screen and consent receipt
+
+The Thank You screen confirms the response was recorded and securely submitted. When the form collected an email address, it also shows a **Consent receipt** notice — a signed copy was sent to that email with per-purpose consent details and a withdrawal link. Respondents can **Download PDF Receipt**: a signed PDF including consent purposes, notice, and retention (board-ready proof). **Submit another response** starts a blank form again.
+
+## Unavailable forms
+
+A draft, closed, or missing link shows the matching message — for example **This form is not yet available** for drafts or **This form is no longer accepting responses** for closed forms — with a **Check Again** button. If the owner opens the page, an owner bar offers **Edit in Builder** and **Make Live Now** instead.
+
+## Template previews
+
+Each template also has a public preview at `/templates/preview/<template-id>` with Desktop / Tablet / Mobile device modes. Anyone can fill the preview to test validation — nothing is stored — but **Use This Template** requires signing in and creates a real draft form.
+
+<Columns cols={2}>
+  <Card title="Create & manage forms" icon="file-lines" href="/forms-create">
+    Create forms and control whether they accept entries.
+  </Card>
+  <Card title="Form builder" icon="layout" href="/form-builder">
+    Design the fields, pages, and consent respondents see.
+  </Card>
+</Columns>

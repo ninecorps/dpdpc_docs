@@ -1,0 +1,160 @@
+---
+title: "FAQ"
+description: "Answers to common questions about accounts, forms, consent, the vault, incidents, and billing."
+icon: "circle-question"
+---
+
+Quick answers about using dpdpcomply. For step-by-step guides, see the product guide links at the bottom of each answer.
+
+## Accounts & access
+
+<AccordionGroup>
+  <Accordion title="Why did a 'You've been signed out' dialog appear?">
+    Your session expired, or you signed out in another tab. Nothing on the page was discarded — click **Sign in again** to continue where you were.
+  </Accordion>
+  <Accordion title="Why can't I see Domains, Team & Roles, or Billing in the sidebar?">
+    These areas are permission-gated. Domains needs the domain-management permission; Team, Billing, and Usage need user management. Ask a head-office administrator.
+  </Accordion>
+  <Accordion title="Why am I pinned to one branch?">
+    Accounts scoped to a single campus open directly in that branch's context and cannot switch. An organization-wide administrator can change your campus assignment in Team & Roles.
+  </Accordion>
+  <Accordion title="How do I switch between the consolidated view and a branch?">
+    Click the organization name in the header and pick **All Branches Overview** or a branch row. See [Workspace home](/workspace-home).
+  </Accordion>
+</AccordionGroup>
+
+## Organization & team
+
+<AccordionGroup>
+  <Accordion title="What is the workspace URL slug?">
+    It's the identifier in every workspace URL (`/dpdpc/<slug>/...`), chosen during organization setup from your organization name. The organization name itself can be edited any time in Organization Details.
+  </Accordion>
+  <Accordion title="What are the logo requirements?">
+    The organization logo must be an image under 1.5 MB. The email branding logo is separate: PNG, JPEG, or WebP under 2 MB (it is re-encoded for email delivery).
+  </Accordion>
+  <Accordion title="Can I delete a branch?">
+    Only empty branches — no members, invitations, or forms — can be deleted. The head office can never be deleted or archived. Other branches can be archived and restored.
+  </Accordion>
+  <Accordion title="What happens when I delete the organization?">
+    All organizational data is permanently destroyed after typing the organization name and confirming your identity. Your **account is kept** and you can create a new organization. See [Organization settings](/organization-settings).
+  </Accordion>
+</AccordionGroup>
+
+## Forms
+
+<AccordionGroup>
+  <Accordion title="Why can't I publish my form?">
+    Publishing requires two things: the form must contain an Email or Phone field (so the Privacy Vault can map submissions), and the Privacy Check must report no blocking issues — personal fields need privacy labels/encryption and a Consent Toggles field. See [Form builder](/form-builder).
+  </Accordion>
+  <Accordion title="How many templates are there?">
+    Thirteen prebuilt, DPDP-compliant templates — admissions, transport, hostel, exams, placement, scholarships, staff onboarding, field trips, media consent, EdTech, PwD accommodations, health, and a Section 5(2) roster-consent form. See [Create & manage forms](/forms-create).
+  </Accordion>
+  <Accordion title="Does the CSV/JSON export respect my search filter?">
+    No — exports always include every response for the form, not just the rows matching the current search or sort.
+  </Accordion>
+  <Accordion title="How does email verification on forms work?">
+    Email fields marked for verification require a 6-digit code, valid 5 minutes, with a 60-second resend cooldown and a maximum of five resends. In builder preview mode, the fixed code `123456` is used.
+  </Accordion>
+  <Accordion title="How do I stop accepting submissions temporarily?">
+    Flip the form's **Accepting entries** switch off (or **Pause access (Draft)** from the card menu). The public link stops accepting responses until you open access again.
+  </Accordion>
+</AccordionGroup>
+
+## Consent & policies
+
+<AccordionGroup>
+  <Accordion title="What's the difference between Save Changes and Bump?">
+    **Save Changes** persists your draft without changing the version. **Bump to `v{n+1}`** publishes an immutable, SHA-256-hashed snapshot and can notify principals with active consent. See [Consent policy library](/consent-library).
+  </Accordion>
+  <Accordion title="Should I link a consent policy or copy it as custom?">
+    **Link Policy Live** keeps the form tied to the policy, so future version bumps flow into the form. **Copy as Custom** freezes a one-time snapshot with no ongoing link.
+  </Accordion>
+  <Accordion title="Why is a regional language required in the consent editor?">
+    DPDP Section 5(3) requires notices in the scheduled languages of India. The editor requires English plus one regional language before a policy can be saved or published; all 22 Eighth Schedule languages are offered.
+  </Accordion>
+  <Accordion title="Can a required consent purpose be withdrawn?">
+    No. Required (core-service) purposes are locked on, both in the consent editor and in the Privacy Vault for data principals. Optional purposes can be withdrawn at any time.
+  </Accordion>
+</AccordionGroup>
+
+## Data & requests
+
+<AccordionGroup>
+  <Accordion title="The audit pack didn't download — what happened?">
+    Large packs are generated in the background: you'll receive an email with secure, time-limited links instead of an immediate download (packs split into chunks of 500 records per PDF). This is normal for big datasets. See [Data submissions & audit packs](/data-submissions).
+  </Accordion>
+  <Accordion title="Why is the Re-consent Queue button disabled?">
+    It needs a specific form selected in the form filter — with **All forms** chosen it can't compute a version comparison.
+  </Accordion>
+  <Accordion title="Why are emails and values masked in the Inbox?">
+    By design: the Inbox shows masked data to protect privacy. Use **View full record in Data** when you need complete fields — that access is audit-logged. See [Fiduciary inbox](/fiduciary-inbox).
+  </Accordion>
+  <Accordion title="What is a deletion certificate?">
+    When a completed erasure includes one, you can download a signed PDF certificate from the request drawer as proof of statutory erasure.
+  </Accordion>
+</AccordionGroup>
+
+## Privacy Vault
+
+<AccordionGroup>
+  <Accordion title="How do data principals sign in to the vault?">
+    With their email and a 6-digit OTP — no password. Sessions end after 15 minutes of inactivity, extendable from the header timer. See [Privacy Vault portal](/vault-portal).
+  </Accordion>
+  <Accordion title="Can a student who is a minor open the vault?">
+    No. Under DPDP Section 2(j) and Rule 10, minors cannot access the vault directly — a registered parent or lawful guardian signs in and exercises the child's rights. Minors also cannot withdraw statutory parental consent.
+  </Accordion>
+  <Accordion title="How does consent withdrawal from a receipt email work?">
+    Receipt emails include a signed **Manage your consent** link. It opens a withdrawal page for that submission — no sign-in needed — where optional purposes can be withdrawn with one click.
+  </Accordion>
+  <Accordion title="When can a nominee access the data?">
+    Only after death or incapacity, and only after the nominee verifies their identity on the portal and submits statutory proof (death certificate or medical disability proof) to the Grievance Officer. While the principal is active, nominees have no access.
+  </Accordion>
+</AccordionGroup>
+
+## Incidents
+
+<AccordionGroup>
+  <Accordion title="Does declaring a breach automatically email everyone?">
+    No. Declaring activates the 72-hour Board window and stages recipients in pending status — notices are sent only when you click **Send all statutory notices**. See [Incidents & breach desk](/incidents).
+  </Accordion>
+  <Accordion title="What is a drill?">
+    **Mock Audit Drill** runs the entire response flow — declaration, countdown, and notices — in simulation mode. Drill incidents are labelled, kept out of live filters, and no real email leaves the platform.
+  </Accordion>
+  <Accordion title="What happens when I delete an incident?">
+    The incident, its statutory notices and filings, evidence files, and audit ledger are permanently removed. This cannot be undone.
+  </Accordion>
+</AccordionGroup>
+
+## Domains & scanning
+
+<AccordionGroup>
+  <Accordion title="Why is the tracker scanner locked?">
+    Scans run only on domains with verified ownership — under DPDP Section 9(3), audits are limited to websites you control. Complete the DNS TXT verification first. See [Domains, portals & scanner](/domains-scanner).
+  </Accordion>
+  <Accordion title="My DNS provider added my domain twice — what do I do?">
+    Providers like Namecheap and GoDaddy auto-append the domain to host fields. Enter only the host prefix (the page shows a Double-Domain banner explaining this for your records).
+  </Accordion>
+  <Accordion title="I changed my DNS records but verification still fails.">
+    Verification reads public DNS, which can cache answers for several minutes after a change. Wait for the cache window shown on the page, then re-check.
+  </Accordion>
+  <Accordion title="What happens if I rename a branded subdomain?">
+    The hostname and its DNS records change, and the portal returns to Pending DNS until you verify it again.
+  </Accordion>
+</AccordionGroup>
+
+## Billing & usage
+
+<AccordionGroup>
+  <Accordion title="What happens when I hit a plan limit?">
+    The action is blocked with a dialog naming the limit (forms, campuses, seats, storage, email, and so on) and a **View plans** button that opens Billing. Nothing over your quota is billed automatically. See [Billing & usage](/billing-usage).
+  </Accordion>
+  <Accordion title="Does my email quota include OTPs and statutory notices?">
+    No — statutory mail (OTP verifications, notices, invites) is never counted against the monthly email quota. The quota covers other outbound sends.
+  </Accordion>
+  <Accordion title="What are SMS/OTP credits?">
+    Prepaid credits (1 credit = ₹1) used for statutory parental-consent verifications and SMS alerts. Top them up or redeem voucher codes from the Billing page.
+  </Accordion>
+  <Accordion title="Where do I get my tax invoices?">
+    Billing → **Past Invoices**. Each invoice is a Rule 46 CGST-compliant document you can view in detail or download as a PDF.
+  </Accordion>
+</AccordionGroup>

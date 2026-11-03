@@ -1,0 +1,52 @@
+---
+title: "Fiduciary inbox"
+description: "Triage data principal requests — withdrawals, corrections, erasures, grievances, and nominee claims — within SLA."
+icon: "inbox"
+---
+
+The **Inbox** (`/dpdpc/<org-slug>/inbox`) is the fiduciary's queue of Data Principal requests: consent withdrawals, data corrections, data erasures, grievances, submissions, and nominee claims. It refreshes automatically while the tab is open, so new requests appear without a manual reload.
+
+## Triage the queue
+
+- **KPI strip** — Total Requests, Pending Review, Completed, Rejected.
+- **Status tabs** — All, Pending, Completed, Rejected.
+- **Type filter and search** — filter by request type (for example **Nominee Claims (Sec 14)**) or search by email, reference, or title.
+
+The inbox is privacy-first by design: principal emails and correction values are masked, and the full student record is never shown here. To see complete fields, click **View full record in Data** — that view is audit-logged.
+
+## Decide a request
+
+<Steps>
+  <Step title="Open the request">
+    Click **View** on a row. The drawer shows what was asked, the reference ID, and the lifecycle: Pending Review → Completed or Rejected.
+  </Step>
+  <Step title="Verify">
+    For corrections, compare the masked old and new values. For erasures, confirm the scope (field, submission, or all records). For nominee claims, review the claim basis, claimant contact, and statutory proof.
+  </Step>
+  <Step title="Accept">
+    Click **Accept & Apply**, tick the pre-verified review checklist, optionally add a fiduciary note, then **Confirm Accept → Completed**. Databases synchronize and the principal is notified by email.
+  </Step>
+  <Step title="Or reject">
+    Click **Reject Request**, pick a **Rejection reason** (for example Insufficient ID proof or Duplicate request), and add a note — the note is emailed to the principal.
+  </Step>
+</Steps>
+
+## Processor notices and retention holds
+
+- **Vendor notices** (erasure and withdrawal requests) — send templated notices telling processors to erase or cease processing. Tick only the identifier fields a vendor genuinely needs, send individually, mark as **Handled offline**, or send to all at once.
+- **Retention holds** (erasure requests) — records under an active hold are never erased; erasure completes with retention. A hold needs a reason and a legal citation.
+- **Deletion certificates** — completed erasures with a certificate can be downloaded as a signed PDF.
+
+## Grievances and nominee claims
+
+- **Grievances** carry a 90-day SLA (Rule 14(3)) — the accept checklist includes reviewing the grievance against it, and the grievance officer is notified on decisions.
+- **Nominee claims** (Section 14) are binary decisions: verify proof of death or incapacity and the nominee's identity, then approve or reject with a documented reason.
+
+<Columns cols={2}>
+  <Card title="Privacy Vault portal" icon="shield-halved" href="/vault-portal">
+    Where principals raise these requests themselves.
+  </Card>
+  <Card title="Data principals directory" icon="address-book" href="/data-principals">
+    Each principal's full request history in their dossier.
+  </Card>
+</Columns>

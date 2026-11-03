@@ -1,0 +1,53 @@
+---
+title: "Form submissions & analytics"
+description: "Inspect, export, and analyze responses in the Submissions and Analytics tabs of each form."
+icon: "chart-simple"
+---
+
+Every form has two tabs for understanding its responses: **Submissions** for record-level review and **Analytics** ("Performance Insights") for trends. Open a form in the builder at `/dpdpc/<org-slug>/forms/<form-id>/edit` and pick a tab.
+
+## Submissions tab
+
+The toolbar shows **Total Submissions**, the **Latest Entry** date, and an entry count.
+
+- **Search** — free-text search across submission IDs, respondent identities, and every answer value.
+- **Sort** — click a column header to sort ascending, click again for descending, a third time to remove sorting.
+- **Columns** — click **Columns** to choose which question columns are visible. Use **All**, **None**, or **Reset** (which restores the default first six question fields).
+- **Row actions** — open the detail drawer, view the full signed-submission PDF, or delete the entry (a confirmation dialog warns the action cannot be undone).
+
+### Submission details drawer
+
+Each drawer shows the submission's status (**Recorded**), date, respondent (or Anonymous Respondent), and every answer as its own card. Highlights:
+
+- **Official Submission & Signed Agreement PDF** — a complete record with responses, agreed terms, and signature. Use **View Full PDF**.
+- **First-Party Attribution (DPDP 2023)** — cookie-free traffic source, campaign, device category, and submission duration, when available.
+- **Consents** — a summary such as "2 of 3 Consents Accepted" with one row per purpose.
+- **Signatures and attachments** — view-only, protected previews; files cannot be downloaded from the drawer.
+
+### Export
+
+Click **Export** for **Export to CSV (.csv)** or **Export to JSON (.json)**. Exports download immediately and cover **all** responses for the form — not just the rows matching your current search. Export is disabled until at least one response exists.
+
+## Analytics tab
+
+<Note>
+Analytics are 100% first-party and cookie-free (DPDP Act 2023). Location data is country-level, without raw IP logging or tracking cookies.
+</Note>
+
+1. Pick a **Time Range**: All Time (default), Today, 7 Days, 30 Days, 4 Weeks, 3 Months — or choose a custom range from the calendar and **Apply**.
+2. Read the KPI cards:
+   - **Total Views** — form page impressions.
+   - **Submissions** — completed responses.
+   - **Top Origin Country** — leading country with its share of traffic.
+   - **Conversion Rate** — submissions divided by views.
+3. **From Location** breaks down views, submissions, and conversion rate per country.
+4. **Activity Timeline** plots views and submissions per day; hover a bar for exact counts.
+
+<Columns cols={2}>
+  <Card title="Data submissions (workspace)" icon="table" href="/data-submissions">
+    The org-wide submissions view and audit packs.
+  </Card>
+  <Card title="Public form experience" icon="globe" href="/public-forms">
+    How respondents reach and complete your form.
+  </Card>
+</Columns>

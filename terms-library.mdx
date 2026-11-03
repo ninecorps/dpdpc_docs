@@ -1,0 +1,72 @@
+---
+title: "Terms & policy library"
+description: "Maintain multi-page legal agreements and privacy policies, import from your website, and attach them to forms."
+icon: "file-shield"
+---
+
+The **Terms & Policy** page (`/dpdpc/<org-slug>/terms-and-policy`) holds your organization's multi-page legal documents — agreements, privacy policies, disclaimers, and statutory terms. Each document is a set of titled pages with rich-text content.
+
+<Warning>
+Deleting a document from its card menu happens immediately, without a confirmation dialog.
+</Warning>
+
+## Create a document
+
+<Steps>
+  <Step title="Start a new document">
+    Click **New Document**.
+  </Step>
+  <Step title="Pick a structure">
+    Choose a **Page Structure & Template**: Blank Document (1 page), Standard Multi-Page Agreement (3 pages), SaaS Subscription Agreement (4 pages), or Privacy Policy Notice (2 pages). Templates pre-fill the chapter titles and starter clauses.
+  </Step>
+  <Step title="Create">
+    Add a required **Document Title** and optional description, then **Create Document** — the editor opens.
+  </Step>
+</Steps>
+
+## Edit the document
+
+- **Pages** — use **Add Page** or a page pill's menu to Rename, Duplicate, Move Left/Right, or Delete (a document keeps at least one page).
+- **Rich text** — the toolbar covers fonts, sizes, colors, highlights, alignment, lists, quotes, links, and an **Insert Field** chip (Organization Name, User Name, Date, Website URL).
+- **Translate a page** — pick a language, click **Translate**, review the preview (**Show Original** / **Show Translated**), then **Apply to Page** and **Save**. Translation is per active page and stays a preview until applied.
+- **Preview** — toggle **Edit** / **Preview** to read the document as Full Document or Page by Page.
+- **Save** — persists the document and all its pages.
+
+## Import from a website
+
+Click **Import from Site** (library) or **Import Site** (editor), then choose a tab:
+
+- **Website URL** — enter the terms/policy URL and click **Fetch & Extract**. The extractor pulls the readable agreement, removes navigation and ads, and preserves headings.
+- **Paste / File** — paste HTML or plain text, or upload a `.txt`, `.md`, or `.html` file.
+
+<Warning>
+Where the import lands depends on where you opened the dialog: from the library it creates a **new single-page document**; from inside the editor it **replaces the content of the active page only**. Review the preview before applying.
+</Warning>
+
+## Export
+
+From the editor's **Export** menu or a card's row menu:
+
+- **Print Multi-Page PDF** — opens a print window with each page numbered; choose "Save as PDF" in your browser's print dialog.
+- **Download Full HTML** — downloads the document as a standalone `.html` file.
+- **Copy All Pages Text** — copies plain text of all pages to the clipboard.
+
+## Attach pages to a form
+
+In the form builder, add a **Terms and Conditions** field and set its **Terms Source** to **Attached**:
+
+1. Click **Browse & Attach Terms** and select a document.
+2. Tick the pages to attach (**Select All** or **Single Page**; at least one page must stay selected) and confirm with **Attach Selected Pages**.
+3. Configure the reading experience: **Paginated** or **Continuous** presentation, a **Popup Modal Dialog** or an **In-line Scrollable Box**, optional custom preamble/addendum text, and whether respondents can print and download the terms.
+4. Set the **Declaration Statement** and whether acceptance is **Mandatory**.
+
+Later, use **Re-sync** to pull library edits into the form, or **Detach** to freeze an independent copy. The form-level **Add Terms Page** button (in the builder's page bar) creates a dedicated terms page from a library document instead. See [Form builder](/form-builder).
+
+<Columns cols={2}>
+  <Card title="Consent policy library" icon="handshake" href="/consent-library">
+    Versioned DPDP consent policies with audit snapshots.
+  </Card>
+  <Card title="Form builder" icon="layout" href="/form-builder">
+    Where terms and consent fields come together.
+  </Card>
+</Columns>

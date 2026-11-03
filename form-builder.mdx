@@ -1,0 +1,125 @@
+---
+title: "Form builder"
+description: "Design multi-page forms: field palette, properties, DPDP consent, privacy checks, preview, and sharing."
+icon: "pen-ruler"
+---
+
+The form builder at `/dpdpc/<org-slug>/forms/<form-id>/edit` is a five-tab workspace: **Build**, **Submissions**, **Analytics**, **Integrations**, and **Rules**. This page covers the **Build** tab — the drag-and-drop canvas where forms are designed.
+
+<Note>
+Save with **Save Form** or `Ctrl/Cmd + S`. Leaving with unsaved changes prompts you to save or discard.
+</Note>
+
+## Builder layout
+
+- **Top bar** — form name, save-status pill (Saving…, Unsaved changes, Saved, Published), canvas tools (**Form Templates**, **Page Properties**, **Design & Theme**, **AI Assistant** — shortcut `⌘J`), **Save Form**, **Preview Form** (`P`), a Live/Draft access switch, and **Publish** (or **Share** when live).
+- **Left panel** — the **Form Fields** palette and the **Design** panel.
+- **Center canvas** — your pages and fields, exactly as respondents will see them.
+- **Right panel** — the **Properties** sheet for the selected field.
+
+## Field palette
+
+Click or drag a field onto the canvas. Fields are grouped:
+
+| Group | Fields |
+| ----- | ------ |
+| Basic Info | Name, Address, Phone, Email, Website, Date of Birth |
+| Identity & Verification | Aadhaar Card, PAN Card |
+| Choices | Dropdown, Grouped Dropdown, Radio, Checkbox, Multiple Choice, Large List, Image Choices |
+| Number | Number, Decimal, Currency |
+| Date & Time | Date, Time, Date-Time, Month-Year |
+| Textbox | Single Line, Multi Line |
+| Uploads | Image Capture & Upload, Video Capture & Record, File Upload, Audio Upload |
+| Rating Scales | Rating |
+| Legal & Consent | Terms and Conditions, Signature, Consent Toggles |
+| Parent / Guardian (minor) | Parent Details Group (adds six guardian fields at once) |
+| Instructions | Description, Audio Embed, Video Embed, PDF Embed, Map Location, Image Slider, Banner |
+
+Hover a field on the canvas to move it, edit its choice list, configure consents, ask the AI, duplicate, delete, or open its properties.
+
+<Note>
+**Aadhaar Card** and **PAN Card** fields are permanently locked to Personal + Encrypted under DPDP Act §8(5) — encryption cannot be turned off for them.
+</Note>
+
+## Field properties
+
+Select any field to configure it in the **Properties** sheet:
+
+- **Field Label** (with an option to hide the label), **Instructions**, and **Hover Text**.
+- **Visibility** — Show or Hide. Hidden fields are skipped in the published form.
+- **Mandatory** with a custom validation error message (for terms and signature fields).
+- **Placeholder Text** and character limits (min/max length) for text-style fields.
+- Type-specific options — for example Name elements and titles, Address elements with a default country, email domain allow/reject lists with verification and uniqueness, currency and number ranges, date formats and age validation, upload file types and sizes, and signature draw/upload modes.
+- **DPDP privacy** — **Mark as Personal** and **Encrypt** toggles. The privacy checker suggests labels for fields that look personal; suggestions can be applied individually or with **Apply all**.
+
+## Multi-page forms
+
+Add pages from the bottom page bar: **Add New Page**, **Add Page Here** (between pages), or **Add Terms Page** to insert a page from your Terms & Policy library. Drag page tabs (or use **Page Properties** → **Rearrange**) to reorder. The first page cannot be deleted; deleting another page moves its fields to the first remaining page.
+
+**Page Properties** controls, per page:
+
+- **Page Title** and whether the title appears in the navigation bar, on the page, or nowhere.
+- **Navigation Bar** layout (top or left) and one of 11 styles, from Connected Circles to Diamond Steps.
+- **Field Validation** — validate *before proceeding to the next page* or *on final submission*.
+- Optional page numbers.
+
+## Design your form
+
+Open the **Design** tab in the left panel:
+
+- **Form Background** — 12 pre-built tones (Pure White to Deep Charcoal) or a custom color.
+- **Typography & Fonts** — Modern Sans, Editorial Serif, Technical Mono, Rounded Geometric, Classic Serif, Corporate Sans.
+- **Accent & Button Color** — eight accents or a custom color for buttons and highlights.
+
+## Configure DPDP consent
+
+Add **Consent Toggles** from the Legal & Consent group, then open **Edit DPDP Consent** from the field's hover menu:
+
+1. **Notice** — write the Section 5 notice in English and one regional language (all 22 Eighth Schedule languages are offered; a regional language is required to save).
+2. **Purposes** — itemized, unbundled purposes per Section 6(1). The first purpose is locked as the required core service; additional purposes are optional and off by default (opt-in).
+3. **Officer & Retention** — keep the organization's Grievance Officer (Rule 9) or set a custom per-form officer, and set the retention policy with a 48-hour pre-deletion notice.
+4. **Withdrawal** — set the consent-withdrawal link (in-app modal, external portal, or email DPO) and the withdrawal display text.
+5. **Presets** — apply a saved organization consent policy or a standard DPDP starter preset, or **Save as Organization Policy Template** to reuse this configuration across forms.
+
+<Tip>
+Link the field to a versioned policy from your consent library with **Attach Organization Policy**, so one update applies everywhere. See [Consent policy library](/consent-library).
+</Tip>
+
+## Attach legal terms
+
+Two options:
+
+- **Add Terms Page** (bottom page bar) — creates a dedicated page from a document in your Terms & Policy library, with the pages you select attached.
+- **Terms and Conditions** field — embeds terms inline; choose the source in its properties.
+
+## Preview and publish
+
+1. Click **Preview Form** (`P`) to test the form at desktop, tablet (720px), or mobile (390px) width. Email verification fields accept the preview code `123456` in preview mode.
+2. Click **Publish**. The builder enforces two gates first:
+   - **Vault mapping** — the form must contain an Email or Phone field.
+   - **Privacy Check** — personal fields must carry privacy labels/encryption and a Consent Toggles field must exist. Suggestions can be applied manually or fixed with AI.
+3. When the form goes live, the **Share Form** dialog opens with **Share** (copy link or share to social), **QR Code** (download PNG), and **Embed** (inline, popup, slide-in, or full page) options.
+4. To unpublish, switch the form back to **Draft** — see [Create & manage forms](/forms-create).
+
+## AI assistant
+
+Open the **AI Assistant** (header icon, floating bubble, or `⌘J`) and ask it to add fields, reorder, or edit the form in natural language. It can draft fields live, ask clarifying questions, and propose an execution plan you approve before it runs. Review each action card and click **Apply to form** — **Undo** reverses the last applied action.
+
+<Note>
+AI chat history auto-deletes after one hour, and opening the assistant starts a new chat. Treat it as an ephemeral workspace, not a record.
+</Note>
+
+<Columns cols={2}>
+  <Card title="Form submissions & analytics" icon="chart-simple" href="/forms-submissions">
+    The Submissions and Analytics tabs explained.
+  </Card>
+  <Card title="Form integrations" icon="plug" href="/form-integrations">
+    Sheets, webhooks, and email notifications.
+  </Card>
+  <Card title="Form rules" icon="diagram-project" href="/form-rules">
+    Conditional fields and email-PDF automation.
+  </Card>
+  <Card title="Public form experience" icon="globe" href="/public-forms">
+    The respondent side of your published form.
+  </Card>
+</Columns>

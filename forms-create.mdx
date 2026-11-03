@@ -1,0 +1,79 @@
+---
+title: "Create & manage forms"
+description: "Build DPDP-compliant consent forms from scratch or a template, and control who can submit."
+icon: "file-lines"
+---
+
+The **Forms** page (`/dpdpc/<org-slug>/forms`) is your dashboard for every data-collection form. Each form is privacy-governed: fields carry Personal/Encrypted privacy labels, and legal building blocks (terms, signature, DPDP consent toggles) are built in.
+
+## Forms list
+
+- **Filter chips** — All forms, Live, Drafts, Closed, each with a count.
+- **Search** — matches form name, purpose, and target group.
+- **Per-card info** — status badge (Live, Draft, Closed, Disabled), entries count, audience, last updated date, and the public link for live forms.
+
+## Create a form
+
+<Steps>
+  <Step title="Start from blank or a template">
+    Click **Create form** for a blank form, or **Browse templates** to open the **Form Templates Gallery**.
+  </Step>
+  <Step title="Pick a template (optional)">
+    Search or filter the gallery by consent type — Parental, Lawful Guardian / PwD, Self 18+ — and click **Preview** to open a full-page preview, or **Use Template** to create a form from it right away.
+  </Step>
+  <Step title="Build it">
+    A new form opens in the form builder. See [Form builder](/form-builder) for fields, pages, and consent configuration.
+  </Step>
+</Steps>
+
+## Template gallery
+
+There are 13 prebuilt templates, each compliant with DPDP parental and self-consent frameworks:
+
+- **Admission Form**, **Exam Registration** (Admissions)
+- **Transport Registration** (Logistics)
+- **Hostel Admission** (Residential Life)
+- **Placement Registration**, **Staff Onboarding** (Human Resources)
+- **Scholarship Application** (Financial Aid)
+- **Field Trip Consent** (Activities & Events)
+- **Photo / Media Consent** (Media & Communications)
+- **EdTech Platform Consent**, **Pre-Existing Student Roster Consent (Sec 5(2))** (Technology & Compliance)
+- **PwD Accommodation & Support Form** (Special Needs & Inclusion)
+- **Student Health & Infirmary Emergency Consent** (Health & Safety)
+
+Cards show a consent badge (for example **Parent + guardian**, **Self consent (18+)**), statutory badges such as **RPwD / Rule 11** or **Encrypted vault**, and how many questions the template asks.
+
+## Manage existing forms
+
+Open the **⋮** menu on any form card:
+
+- **Edit in builder** — open the form builder.
+- **Submissions & entries** / **Analytics & trends** — jump to that tab.
+- **Integrations & webhooks** — connect the form to sheets, webhooks, or email.
+- **Duplicate form** — copies the form under a new name (it does not open the builder).
+- **Delete form** — permanently removes the form after a confirmation dialog. This cannot be undone.
+
+Use the **Accepting entries / Entries paused** switch to open or pause public access. Pausing reverts the form to draft: the public link stops accepting submissions until you open access again.
+
+<Tip>
+Click the public-link snippet on a live card to copy the respondent URL to your clipboard.
+</Tip>
+
+<Note>
+If your plan's form quota is full, a **Form limit reached** dialog appears when you try to create. Use **View plans** to open Billing and upgrade.
+</Note>
+
+<Columns cols={2}>
+  <Card title="Form builder" icon="layout" href="/form-builder">
+    Fields, pages, design, DPDP consent, and publishing.
+  </Card>
+  <Card title="Form submissions & analytics" icon="chart-simple" href="/forms-submissions">
+    Review responses and per-form trends.
+  </Card>
+  <Card title="Form integrations" icon="plug" href="/form-integrations">
+    Sync entries to Zoho Sheets, webhooks, and email.
+  </Card>
+  <Card title="Public form experience" icon="globe" href="/public-forms">
+    What respondents see when they open your link.
+  </Card>
+</Columns>

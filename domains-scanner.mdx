@@ -1,0 +1,70 @@
+---
+title: "Domains, portals & scanner"
+description: "Verify your domain, audit website trackers under Section 9(3), send email from your domain, and publish branded portals."
+icon: "globe"
+---
+
+The **Domains** page (`/dpdpc/<org-slug>/domains`) manages everything tied to your institution's web domain: ownership verification, the Section 9(3) tracker and pixel scanner, custom email sending, and branded subdomain portals.
+
+<Note>
+The Domains area requires the domain-management permission. If you don't see it in the sidebar, ask a head-office administrator.
+</Note>
+
+## Add and verify a domain
+
+<Steps>
+  <Step title="Register the domain">
+    Click **Add domain** and enter your institution's official website domain.
+  </Step>
+  <Step title="Add the DNS TXT record">
+    The **Required DNS TXT Record** panel shows the exact record to create at your DNS provider (Cloudflare, Route53, GoDaddy, and similar). Copy the host and value from the panel.
+  </Step>
+  <Step title="Verify">
+    Click **Verify Ownership (Live DNS)**. The page queries public DNS and shows a **Live DNS Resolution Report** with per-host status — for example a **Double-Domain** chip means your provider appended the domain twice and you should enter only the host prefix.
+  </Step>
+</Steps>
+
+<Tip>
+Verification reads public DNS, which can cache for several minutes after a change. If the record was just added, re-check after the cache window shown on the page.
+</Tip>
+
+## Scan for trackers and pixels
+
+The **Tracker & Pixel Scanner** tab audits your website for advertising pixels (Meta, Google Ads), behavioural recorders (Hotjar), and cookies, under DPDP Act 2023 Section 9(3):
+
+1. Run **Quick Scan (15 pages)** or **Deep Scan (35+ pages)**. Scanning requires verified ownership.
+2. Read the verdict banner: compliant with zero tracking trackers, or non-compliant with the detected pixels.
+3. Review findings — each lists the tracker, severity, category, page, evidence, and the Section 9(3) violation note. Filter by category or severity.
+4. Click **Download Audit Dossier (PDF)** for the compliance report.
+
+## Set up email sending
+
+The **Email Sending** tab provisions a custom outbound sender on your domain for consent receipts, OTP codes, and statutory notices:
+
+1. Enable an address (the suggestion defaults to `care@<your-domain>`).
+2. Add the **Email Deliverability DNS Records** shown — DKIM CNAME records plus a DMARC TXT record (DMARC is optional and does not block verification).
+3. Click **Re-check DNS** until the records verify, then use **Send Test Email** to confirm delivery.
+
+Use **Disconnect Email** to revert to dpdpcomply's default sending identity.
+
+## Publish branded portals
+
+The **Branded Subdomains** tab publishes two portal types under your domain:
+
+- **Forms Portal** (`forms.<domain>`) — public directory of your live forms.
+- **DPDP Vault** (`dpdpvault.<domain>`) — the data principal privacy vault.
+
+Add the CNAME and verification TXT records shown on each row, then **Verify DNS (Live)**. Renaming a portal prefix changes its hostname and DNS records — the portal returns to Pending DNS until verified again.
+
+## Remove a domain
+
+Deleting a domain is permanent and immediate: verification records, all scanner runs and PDF dossiers, the email identity, and every branded subdomain are purged, and public services stop.
+
+<Columns cols={2}>
+  <Card title="Public form experience" icon="globe" href="/public-forms">
+    What respondents see on your Forms Portal links.
+  </Card>
+  <Card title="Privacy Vault portal" icon="shield-halved" href="/vault-portal">
+    The vault your branded subdomain serves.
+  </Card>
+</Columns>

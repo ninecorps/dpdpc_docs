@@ -18,30 +18,24 @@ Before getting started, make sure you have:
 ## 4-Step Quickstart
 
 <Steps>
-  <Step title="Configure Organization & Campus">
-    Log in to your dashboard and navigate to **Settings** > **Organization Profile**. Set your institution's statutory legal name, official address, and DPO email address.
-    
-    If managing multiple schools or branches, add them under **Branches** to enable campus-level vault isolation.
+  <Step title="Configure your organization">
+    Log in to your dashboard and open **Settings** > **Organization Details**. Set your institution's legal name, address, and contact details, and upload your logo. Then add each campus under **Branches**, and name your grievance officer under **Settings** > **Grievance Officer**.
   </Step>
 
-  <Step title="Create an Unbundled Privacy Notice">
-    Go to **Terms & Policy** > **New Notice**.
-    1. Select the processing purpose (e.g., `STUDENT_ADMISSIONS`, `PARENT_COMMUNICATION`).
-    2. Specify the data fields collected (e.g., Full Name, DOB, Parent Mobile, Aadhaar Last-4).
-    3. Choose supported languages (e.g., English, Hindi, Telugu).
-    4. Click **Publish Notice** to generate a versioned notice hash.
+  <Step title="Create a consent policy">
+    Go to **DPDP Consent Policy** > **Create Consent Policy**.
+    1. Pick a preset (for example, Student Admission & Enrollment Consent) or start from scratch.
+    2. List every purpose you collect data for — the first is your required core service, the rest are optional.
+    3. Add your regional language so the notice is available in English and your language.
+    4. Click **Bump & Publish** to make the policy ready for your forms.
   </Step>
 
-  <Step title="Publish a Form with Consent Modal">
-    Open **Forms** > **New Form**. Add your input fields and toggle **Attach Privacy Notice**.
-    
-    Select the notice created in Step 2. The form runtime will enforce unbundled consent and generate signed **Consent Artifacts** upon submission.
+  <Step title="Publish a form with consent">
+    Open **Forms** > **Create form** (blank or from a template). Add your questions, then add a **Consent Toggles** field and click **Attach Organization Policy** to link the policy from Step 2. Click **Publish** — your shareable link, QR code, and embed code are ready instantly.
   </Step>
 
-  <Step title="Inspect Verified Vault Records">
-    Submit a test form response. Head to **Privacy Vault** in your dashboard to verify:
-    - Personal identifiers are encrypted and tokenized.
-    - A cryptographic **Consent Artifact** is generated with SHA-256 signature proof.
+  <Step title="See the responses arrive">
+    Submit a test response through your form's public link. It appears under the form's **Submissions** tab and in **Data Submissions**, and respondents receive a consent receipt by email with a link to withdraw consent at any time.
   </Step>
 </Steps>
 
@@ -50,10 +44,13 @@ Before getting started, make sure you have:
 ## Next Steps
 
 <Columns cols={2}>
-  <Card title="Consent Lifecycle" icon="handshake" href="/consent-management">
-    Learn how to manage multilingual notices, version changes, and withdrawal workflows.
+  <Card title="Build your first form" icon="file-lines" href="/forms-create">
+    Create forms from scratch or one of 13 compliant templates.
   </Card>
-  <Card title="API Reference" icon="code" href="/api-overview">
-    Explore the 288+ REST API endpoints to integrate direct submissions and ERP sync.
+  <Card title="Consent policy library" icon="scale-balanced" href="/consent-library">
+    Author and version reusable consent policies.
+  </Card>
+  <Card title="Developer APIs" icon="code" href="/api-overview">
+    REST API endpoints and webhooks for technical integrations.
   </Card>
 </Columns>

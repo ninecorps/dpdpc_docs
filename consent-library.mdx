@@ -1,0 +1,82 @@
+---
+title: "Consent policy library"
+description: "Create reusable DPDP Section 5 consent policies, version them for audit, and attach them to forms."
+icon: "handshake"
+---
+
+The **DPDP Consent Policy** page (`/dpdpc/<org-slug>/consents`) is your organization-wide library of consent policies. Each policy holds a Section 5 notice, an affirmation statement, itemized processing purposes, retention and withdrawal rules, and the grievance officer — in English plus regional languages. Forms link to these policies so notices stay consistent everywhere.
+
+<Warning>
+Deleting a policy from the card menu happens immediately, without a confirmation dialog.
+</Warning>
+
+## Create a policy
+
+<Steps>
+  <Step title="Open the create dialog">
+    Click **Create Consent Policy**.
+  </Step>
+  <Step title="Pick a preset or start from scratch">
+    - **Choose DPDP Preset** — Standard DPDP General Notice (most popular), Student Admission & Enrollment Consent, Employee & Staff Onboarding Notice, or Vendor & Partner KYC Compliance.
+    - **Start from Scratch** — a required **Policy Title** and an optional internal description.
+  </Step>
+  <Step title="Create and edit">
+    Click **Create Policy**. The policy starts at version 1 and opens in the editor.
+  </Step>
+</Steps>
+
+## Author the policy
+
+The editor has tabs for **Notice & Lang**, **Purposes**, **Retention & Exit**, **Officer & Rights**, **Live Preview**, **Versions**, and **Principals**:
+
+- **Notice & Lang** — write the English Section 5 notice and the affirmation statement respondents acknowledge. Add any of the 22 scheduled languages under **Add Language**; use **Translate with AI** to draft the translation (review before applying), **Copy English** as a starting point, or type it yourself.
+- **Purposes** — itemized purposes per Section 6(1). Each has a title, a plain-language description, a **Mandatory / Required** switch, and **Opt-in (Default OFF)** for optional ones, plus an optional retention note.
+- **Retention & Exit** — the withdrawal link and label (Section 6(4)), a retention summary, and the statutory detail notice (Rule 8).
+- **Officer & Rights** — inherit the organization's grievance officer (Rule 9) or enable **Custom Override** with per-policy officer details.
+- **Live Preview** — the respondent-facing notice, purpose toggles, and affirmation, switchable by language. Required purposes are locked on.
+
+Click **Save Changes** to persist your draft. Leaving with unsaved changes prompts you to save or discard.
+
+## Publish a new version
+
+<Note>
+**Save is not publish.** Save Changes keeps the current version number. Only **Bump to `v{n+1}`** records a new published version.
+</Note>
+
+<Steps>
+  <Step title="Complete preparation">
+    The header shows your preparation progress (for example, the English notice and every purpose need text). **Bump to `v{n+1}`** stays disabled until everything is complete.
+  </Step>
+  <Step title="Summarize and notify">
+    In the bump dialog, enter a required **Summary of Changes** — it is permanently logged in the audit trail. If data principals already accepted this policy, the notification toggle (on by default) emails the updated notice to *currently active* principals only.
+  </Step>
+  <Step title="Publish">
+    Click **Bump & Publish `v{n+1}`**. The **Versions** tab records an immutable snapshot with a tamper-evident SHA-256 hash for burden-of-proof compliance. Linked forms surface the updated notice on their next submission.
+  </Step>
+</Steps>
+
+<Tip>
+**Restore** on an old version loads that snapshot into the editor for reuse — it does not roll back the live version. Bump again to publish what you restored.
+</Tip>
+
+## Monitor the consent lifecycle
+
+The **Principals** tab (or the header's accepted-principals button) shows total, active, and withdrawn consents, linked forms, **Purpose Opt-in Rates**, and **Version Distribution**. The data-principal table lists masked identifiers only — never full personal data.
+
+## Attach a policy to a form
+
+In the form builder, add a **Consent Toggles** field and click **Attach Organization Policy**. You can:
+
+- **Link Policy Live** — the form stays tied to the policy; future version bumps flow into the form automatically.
+- **Copy as Custom** — a one-time snapshot with no ongoing link.
+
+Change or unlink the policy later from the field's properties. See [Form builder](/form-builder).
+
+<Columns cols={2}>
+  <Card title="Terms & policy library" icon="file-shield" href="/terms-library">
+    Manage multi-page legal documents and attach them to forms.
+  </Card>
+  <Card title="Form builder" icon="layout" href="/form-builder">
+    Where consent toggles and terms fields are configured.
+  </Card>
+</Columns>

@@ -25,12 +25,61 @@
             ]
           },
           {
-            "group": "Core Platform",
+            "group": "Product Guides",
             "pages": [
-              "consent-management",
-              "privacy-vault",
-              "grievance-redressal",
-              "incident-response"
+              "onboarding",
+              "workspace-home",
+              "group-overview"
+            ]
+          },
+          {
+            "group": "Forms",
+            "pages": [
+              "forms-create",
+              "form-builder",
+              "forms-submissions",
+              "form-integrations",
+              "form-rules",
+              "public-forms"
+            ]
+          },
+          {
+            "group": "Consent & Policies",
+            "pages": [
+              "consent-library",
+              "terms-library"
+            ]
+          },
+          {
+            "group": "Data & Requests",
+            "pages": [
+              "data-submissions",
+              "data-principals",
+              "fiduciary-inbox"
+            ]
+          },
+          {
+            "group": "Security & Vault",
+            "pages": [
+              "vault-portal",
+              "incidents",
+              "domains-scanner",
+              "vendors"
+            ]
+          },
+          {
+            "group": "Settings & Billing",
+            "pages": [
+              "organization-settings",
+              "email-center",
+              "team-roles",
+              "billing-usage"
+            ]
+          },
+          {
+            "group": "Support",
+            "pages": [
+              "faq"
             ]
           }
         ]
@@ -108,12 +157,12 @@
             "href": "/quickstart"
           },
           {
-            "label": "Consent Lifecycle",
-            "href": "/consent-management"
+            "label": "Consent Policy Library",
+            "href": "/consent-library"
           },
           {
-            "label": "Privacy Vaults",
-            "href": "/privacy-vault"
+            "label": "Privacy Vault Portal",
+            "href": "/vault-portal"
           }
         ]
       },
@@ -135,6 +184,10 @@
           {
             "label": "Changelog",
             "href": "/changelog"
+          },
+          {
+            "label": "FAQ",
+            "href": "/faq"
           }
         ]
       },
@@ -146,12 +199,12 @@
             "href": "/architecture"
           },
           {
-            "label": "Grievance Redressal SLA",
-            "href": "/grievance-redressal"
+            "label": "Fiduciary Inbox",
+            "href": "/fiduciary-inbox"
           },
           {
-            "label": "CERT-In 6h Reporting",
-            "href": "/incident-response"
+            "label": "Incidents & Breach Desk",
+            "href": "/incidents"
           }
         ]
       },

@@ -1,0 +1,66 @@
+---
+title: "Set up your organization"
+description: "Create your dpdpcomply workspace: organization details, plan selection, and activation."
+icon: "rocket"
+---
+
+When you sign in for the first time (or when your account has no organization yet), dpdpcomply routes you to a three-step setup wizard: **Organization**, **Plan selection**, and **Checkout**. Completing it creates your organization and opens your workspace home.
+
+<Note>
+You can also open the wizard directly at `/dpdpc/onboarding/create-org`. If you already manage an organization, the dashboard redirects you home instead.
+</Note>
+
+## Create your organization
+
+<Steps>
+  <Step title="Enter your organization details">
+    On the **Create your organization** page, fill in:
+
+    - **Organization name** — your institution's name. The workspace URL slug auto-fills from it.
+    - **Workspace URL Slug** — used in every workspace URL (`/dpdpc/<slug>/...`). Lowercase letters, numbers, and hyphens only.
+    - **Timezone** and **Currency** — pre-filled from your profile or browser where possible. Indian Rupee (INR) is the default currency.
+    - **Additional details (optional)** — for example, your primary campus address or board affiliation.
+
+    Click **Continue to Plan Selection**.
+  </Step>
+
+  <Step title="Choose a plan">
+    Pick a billing interval first: **Monthly billing** or **Annual billing** (annual saves 15%). Then choose:
+
+    - **Essentials** — one campus, core statutory compliance.
+    - **Professional** — adds a custom domain, audit packs, re-consent campaigns, and the website tracker scanner.
+    - **Group** (*Most popular*) — multi-campus trusts: consolidated roll-up, campus isolation, bulk provisioning.
+    - **Enterprise** — SSO, dedicated deployment, and API access. Selecting it opens a **Contact sales** action instead of self-serve checkout.
+
+    Each card shows the per-student rate, minimum enrolment, campus count, admin seats, and support SLA. Use **Compare our plans** for the full side-by-side table.
+  </Step>
+
+  <Step title="Complete checkout">
+    The checkout step finalizes your subscription. In the current release, online payment is not available yet: the page shows **Contact sales to activate a plan** and takes no payment.
+
+    <Tip>
+      Plan prices shown in the app come from the live plan catalog and can differ from marketing material — always rely on the checkout summary for the final amount.
+    </Tip>
+  </Step>
+</Steps>
+
+## After your organization is active
+
+Once your organization is provisioned, you land in your workspace at `/dpdpc/<your-slug>/home`. The URL slug you chose becomes part of every workspace link, and your account becomes the organization's first administrator.
+
+Recommended next steps:
+
+<Columns cols={2}>
+  <Card title="Workspace home" icon="house" href="/workspace-home">
+    Take a tour of the dashboard, KPIs, and Getting Started checklist.
+  </Card>
+  <Card title="Organization settings" icon="building" href="/organization-settings">
+    Add your logo, branches, and grievance officer details.
+  </Card>
+  <Card title="Team & roles" icon="users" href="/team-roles">
+    Invite colleagues and assign branch-scoped roles.
+  </Card>
+  <Card title="Billing & usage" icon="file-invoice" href="/billing-usage">
+    Review your plan, quotas, and invoices.
+  </Card>
+</Columns>

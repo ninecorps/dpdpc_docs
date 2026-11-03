@@ -1,0 +1,44 @@
+---
+title: "Team & roles"
+description: "Invite colleagues, assign roles and campuses, manage branch head officers, and control seats."
+icon: "users"
+---
+
+**Team & Roles** (`/dpdpc/<org-slug>/team`) manages who can access your workspace, what they can do, and which branches they see.
+
+<Note>
+Branch head officers see a scoped view: they can invite into the branches they lead but not manage organization-wide members. Without the user-management permission the page is hidden entirely.
+</Note>
+
+## Invite a member
+
+<Steps>
+  <Step title="Open the invite dialog">
+    Click **Invite member** (disabled when your plan's admin seats are fully used).
+  </Step>
+  <Step title="Fill the details">
+    Full name (optional), email, a role from your organization's role catalog, and a campus — leave campus empty for **All campuses**.
+  </Step>
+  <Step title="Send">
+    The member receives an email with a link to create their account. Pending invitations appear below with their expiry date, where you can **Resend** (old link stops working) or **Revoke invite** (the reserved seat is released).
+  </Step>
+</Steps>
+
+## Manage members
+
+From a member row's menu:
+
+- **Change role or campus** — adjust roles or move them to a specific campus (or back to All campuses).
+- **Make head officer of `{campus}`** — assign the branch head officer for a campus; **Remove as branch head officer** undoes it.
+- **Remove member** — they lose access and their seat is freed for a new invite.
+
+The header badge shows seat usage (for example `3/4 seats`). When every included seat is allocated, the page explains your options: remove a member or upgrade your tier — **View plans** opens Billing.
+
+<Columns cols={2}>
+  <Card title="Organization settings" icon="building" href="/organization-settings">
+    Branches and grievance officers these members work with.
+  </Card>
+  <Card title="Billing & usage" icon="file-invoice" href="/billing-usage">
+    Seat limits and plan upgrades.
+  </Card>
+</Columns>

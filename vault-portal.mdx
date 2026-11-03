@@ -1,0 +1,75 @@
+---
+title: "Privacy Vault portal"
+description: "The Data Principal self-service vault: OTP sign-in, collected data, consent withdrawal, requests, grievances, and nominees."
+icon: "shield-halved"
+---
+
+The Privacy Vault is the self-service portal where data principals — students and parents/guardians — exercise their DPDP rights for the records your forms collected. It is available at the public `/vault` address and on your organization's branded vault portal. Administrators can open a demo copy from the dashboard via **Fiduciary Vault** (a preview with test data — not shown to principals).
+
+## Sign in with email and OTP
+
+<Steps>
+  <Step title="Enter your email">
+    On **Access your personal records**, enter your email address and click **Continue with OTP**.
+  </Step>
+  <Step title="Enter the 6-digit code">
+    A verification code is emailed to you (valid 5 minutes). Type or paste it and click **Verify and open vault**.
+  </Step>
+  <Step title="Browse your vault">
+    The vault opens with your identity strip and role view.
+  </Step>
+</Steps>
+
+<Note>
+For privacy, the portal never reveals whether an email address has records. If no data is found, the vault simply shows an empty inventory.
+</Note>
+
+<Note>
+Under DPDP Act Section 2(j) and Rule 10, minors cannot open the vault directly — a registered parent or lawful guardian signs in and exercises rights on the child's behalf. Parents see a **Linked Wards & Students** switcher; students see strictly their own records.
+</Note>
+
+## Collected Data
+
+The **Collected Data** tab lists every form record held about you, field by field, classified as Sensitive Personal Data, Personal Data, or General Data. Sensitive values are masked until you reveal them. For each field you can:
+
+- **Fix** — request a correction (Section 12). Pick the record and field, provide the corrected value (or upload a replacement file or signature), and give a statutory reason.
+- **Delete / Erase record** — request erasure (Section 12). Choose the scope: specific field, full record, or all data, plus an erasure ground. An audit erasure certificate is generated when completed.
+
+Every request follows a three-stage lifecycle — **Submitted → Pending Review → Completed** — visible in the **Requests Process** tab, with a 30-day statutory SLA. Expand **Statutory Processing Grounds & RoPA Lineage** to see lawful basis, retention, hosting, and processors for your data.
+
+## Withdraw consent
+
+Two ways, depending on where you start:
+
+- **In the vault (Withdraw Consent tab)** — flip any optional purpose off with one click. Required purposes cannot be withdrawn while the service depends on them. The organization is notified by email.
+- **From a receipt email** — the **Manage your consent** link in a submission receipt opens a signed withdrawal page; no sign-in needed. Click **Withdraw** on an optional purpose and the institution is notified.
+
+## File a grievance
+
+The **File Grievance** tab shows your Grievance Officer's name, email, and phone. Submit a complaint with a category, subject, and details — tickets carry the statutory 90-day response period (Rule 14(3)), and unresolved complaints can be escalated to the Data Protection Board of India.
+
+## Nominate a representative (Section 14)
+
+Under Section 14 and Rule 14, you can designate a nominee who may exercise your data rights in the event of death or incapacity:
+
+1. Open **Nominee (Sec 14)** and click **Designate Nominee Now**.
+2. Enter the nominee's name, relationship, mobile number, and email — the email must be verified with a 6-digit code before saving.
+3. Tick the rights you delegate (view and download data, corrections, erasure, grievances).
+4. Affirm the Section 14 declaration and **Confirm Nomination**.
+
+You can **Modify** or **Revoke** the nomination anytime. The nominee cannot access your data while you are active.
+
+## Session privacy
+
+<Note>
+Privacy sessions automatically end after 15 minutes of inactivity. A warning appears 2 minutes before expiry — click **Extend Session (+15 Mins)** to continue, or **Log Out** to end immediately.
+</Note>
+
+<Columns cols={2}>
+  <Card title="Fiduciary inbox" icon="inbox" href="/fiduciary-inbox">
+    How your organization reviews and completes these requests.
+  </Card>
+  <Card title="Consent policy library" icon="handshake" href="/consent-library">
+    The policies behind each consent purpose.
+  </Card>
+</Columns>

@@ -1,0 +1,41 @@
+---
+title: "Data principals directory"
+description: "Search the registry of data principals, open 360° dossiers, and export or erase records."
+icon: "address-book"
+---
+
+The **Data Principals** page (`/dpdpc/<org-slug>/profiles`) is a consolidated directory of every individual across your forms — with cross-form consent ledgers and Section 9 minors flagged.
+
+## Search the registry
+
+- **Search** — by name, email, or phone.
+- **Classification** — All Age Types, Adults Only, or Minors / Children.
+- **Status** — All Statuses, 100% Consented, Has Withdrawn Consent, or Pending SLA Request.
+- **Columns** — classification (Adult Principal or Minor/Child, Sec 9), ingestion (forms), consent ledger (granted vs total), fiduciary SLA state, and last activity. Page size is 25.
+
+KPI cards at the top summarize total principals, adults, minors, and pending rights requests.
+
+## Open a 360° dossier
+
+Click **Inspect** on a row to open the dossier drawer with five tabs:
+
+- **Attributes & PII** — every captured field grouped into identity & contact, sensitive personal data, documents & signatures, and residence, with the purpose, lawful basis, and retention for each.
+- **Submissions** — every form response linked to this person, with per-purpose consent badges.
+- **Consent Ledger** — the statutory purpose-by-purpose record under Rule 3: the Section 5 notice text, granular purpose consents, the affirmative declaration, and attached terms with signatures.
+- **Fiduciary SLA** — this person's correction, deletion, and grievance requests.
+- **Data Processing Lineage** — retention, hosting/encryption, and cross-border processing details.
+
+## Export and erase
+
+- **Export Registry** — downloads the current page (up to 25 profiles) as CSV.
+- **Export Dossier** — downloads a full JSON dossier for one principal.
+- **Delete Profile** — permanently purges the principal, their submissions, attachments, and consent ledger entries, behind a confirmation dialog with the Section 12 statutory notice. This cannot be reversed.
+
+<Columns cols={2}>
+  <Card title="Data submissions & audit packs" icon="table" href="/data-submissions">
+    The submission-level records feeding this registry.
+  </Card>
+  <Card title="Fiduciary inbox" icon="inbox" href="/fiduciary-inbox">
+    The request queue behind each principal's SLA column.
+  </Card>
+</Columns>

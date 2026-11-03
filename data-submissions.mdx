@@ -1,0 +1,51 @@
+---
+title: "Data submissions & audit packs"
+description: "Browse org-wide submissions with consent evidence, download board-ready audit packs, and run re-consent campaigns."
+icon: "table"
+---
+
+The **Data Submissions** page (`/dpdpc/<org-slug>/data`) lists every form submission across the organization with parent/guardian details and per-purpose consent evidence — the record layer behind your forms.
+
+## Browse submissions
+
+- **Search** — find submissions by student/user, parent, email, or submission ID.
+- **Form filter** — All forms, or a specific form.
+- **Applicant filter** — All applicants, Child, or Adult.
+- **Report scope** — org-wide users with multiple campuses can scope the audit pack to **Consolidated (All Branches)** or a single campus.
+- **Table columns** — Submitted, Form, Student / User, Parent/Guardian, Signature, Consent (granted vs total purposes), and the submission ID.
+
+Click any row to open the **Submission detail** drawer: identity and signing details, the **Consent Receipt** (with per-purpose Granted/Declined evidence and an integrity verification badge), file attachments with view-only secure previews, and the captured field evidence. Terms rows link to the signed agreement PDF.
+
+<Note>
+Viewing submissions is audit-logged — the drawer records that the record was inspected.
+</Note>
+
+## Download the audit pack
+
+Click **Audit Pack PDF** for a board-ready PDF of the submissions (respects the form filter and report scope):
+
+- Small packs download immediately.
+- Large packs are generated in the background: you'll get an email with secure, time-limited links (packs are split into chunks of 500 records per PDF). When the list shows more than 400 rows, an **Email large pack** button queues the pack instead of downloading.
+
+## Re-consent queue and campaigns
+
+When a form's notice version changes, some principals' consents fall behind. With a specific form selected:
+
+1. Click **Re-consent Queue** — a banner lists principals whose consent is on an **Outdated version** or **Missing required purposes**.
+2. Click **Send Re-Consent Campaign** to open the **DPDP Sec 6(7) Re-Consent Campaign** dialog.
+3. Edit the email subject and your message, then **Launch Email Blast**. Principals receive links to review the updated terms, and every dispatch is logged to the consent audit trail.
+
+If everyone is current, the check reports that all consents are up to date.
+
+## Erase a submission
+
+In the submission drawer, the **Danger — Erasure** block offers **Delete Submission**. The confirmation explains that the record, its files in cloud storage, and access-log tokens are permanently purged — this cannot be undone.
+
+<Columns cols={2}>
+  <Card title="Data principals directory" icon="address-book" href="/data-principals">
+    The person-level registry behind these submissions.
+  </Card>
+  <Card title="Fiduciary inbox" icon="inbox" href="/fiduciary-inbox">
+    Handle rights requests and grievances.
+  </Card>
+</Columns>

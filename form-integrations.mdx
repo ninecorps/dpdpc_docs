@@ -1,0 +1,56 @@
+---
+title: "Form integrations"
+description: "Sync submissions to Zoho Sheet, Google Sheets, or Excel, and register vendors receiving form data."
+icon: "plug"
+---
+
+The **Integrations** tab of a form (in the builder at `/dpdpc/<org-slug>/forms/<form-id>/edit`) connects submissions to spreadsheet destinations and tracks which vendors receive the data.
+
+<Warning>
+Per the in-app notice: active spreadsheet connectors and outgoing webhooks are automatically tracked as authorized third-party data processors in your Data Processing Lineage (DPL) and privacy vaults. Ensure a valid Data Processing Agreement (DPA) is executed with each external recipient under Section 8(1).
+</Warning>
+
+## Spreadsheet destinations
+
+Three connectors are available. Changes stage locally — click **Save Changes** on the Integrations page to apply them.
+
+### Zoho Sheet (one-click OAuth)
+
+<Steps>
+  <Step title="Open the connector">
+    Click **Connect Spreadsheet** on the Zoho Sheet card.
+  </Step>
+  <Step title="Authorize Zoho">
+    Click **Connect Zoho Sheet** — a Zoho sign-in popup opens (allow popups). dpdpcomply requests Zoho Sheet and WorkDrive permissions, then creates the workbook and maps columns automatically.
+  </Step>
+  <Step title="Configure and save">
+    Set the **Spreadsheet (Workbook) Name** (default: `{form name} Responses`) and **Worksheet (Tab) Name** (default: Form Responses). Review the auto-configured column list, then **Save & Enable Sync** — and **Save Changes** on the page.
+  </Step>
+</Steps>
+
+Use **Disconnect** to remove the Zoho account connection.
+
+### Google Sheets and Microsoft Excel (webhook URL)
+
+These connectors post each submission to an endpoint you create on the Google or Microsoft side (an Apps Script web app URL for Google Sheets, or a Power Automate / webhook URL for Excel):
+
+1. Create the destination script/flow on the provider's side and copy its URL.
+2. Paste it into **Google Apps Script Web App URL** or **Power Automate / Webhook URL**.
+3. Optionally set **Spreadsheet Name** and **Worksheet Tab Name** (reference only — delivery depends on your endpoint).
+4. Click **Test Connection** to verify the endpoint — a success shows the round-trip time.
+5. Click **Save & Connect**, then **Save Changes**.
+
+Use the per-card toggle to pause a connector, and **Save Changes** to apply.
+
+## Vendors receiving this data
+
+Tick each vendor (from your Vendors register) that receives this form's data, optionally **Limit to purpose**, then **Save vendor links**. Processors act on your behalf — dpdpcomply records withdrawals and erasures and helps you notify them. Independent fiduciaries collect data under their own consent, so principals contact them directly. See [Vendors](/vendors).
+
+<Columns cols={2}>
+  <Card title="Vendors (data processors)" icon="truck" href="/vendors">
+    Register vendors before linking them to forms.
+  </Card>
+  <Card title="Form rules" icon="diagram-project" href="/form-rules">
+    Email a PDF of each submission automatically.
+  </Card>
+</Columns>
